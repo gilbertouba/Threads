@@ -6,15 +6,18 @@ public class PrincipalBanheiro {
 		// TODO Auto-generated method stub
 		Banheiro banheiro = new Banheiro();
 		
-		Thread convidado1 = new Thread(new TarefaNumero1(banheiro),"Gilberto");
-		Thread convidado2 = new Thread(new TarefaNumero2(banheiro),"Maria");
+		//Thread convidado1 = new Thread(new TarefaNumero1(banheiro),"Gilberto");
+		//Thread convidado2 = new Thread(new TarefaNumero2(banheiro),"Maria");
 		Thread convidado3 = new Thread(new TarefaNumero1(banheiro),"Breno");
 		Thread convidado4 = new Thread(new TarefaNumero2(banheiro),"Luciana");
+		Thread limpeza    = new Thread(new TarefaLimpeza(banheiro),"Faxineira");
+		limpeza.setDaemon(true);
 		
-		convidado1.start();
-		convidado2.start();
+	//	convidado1.start();
+//		convidado2.start();
 		convidado3.start();
 		convidado4.start();
+		limpeza.start();
 		
 		
 		

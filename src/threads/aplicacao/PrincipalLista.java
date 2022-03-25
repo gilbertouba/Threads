@@ -11,15 +11,14 @@ public class PrincipalLista {
 		// TODO Auto-generated method stub
 		
 //		List<String> lista = Collections.synchronizedList(new ArrayList<>());
-		List<String> lista = new Vector<>();
+		//List<String> lista = new Vector<>();
+		Lista lista = new Lista();
 		
 		for (int i=0;i<100;i++) {
-			new Thread(new TarefaAdcionarElemento(lista,Thread.activeCount())).start();
+			new Thread(new TarefaAdcionarElemento(lista,i)).start();
 		}
-		
-		for (int i=0;i<lista.size();i++) {
-			System.out.println(i+" - "+lista.get(i));			
-		}
+		new Thread(new TarefaImprimirLista(lista)).start();
+
 	}
 
 }

@@ -5,12 +5,12 @@ import java.util.List;
 
 public class TarefaAdcionarElemento implements Runnable {
 	
-	private List lista = new ArrayList<>();
+	private Lista lista = new Lista();
 	private int   numeroThread;
 	
 	
 
-	public TarefaAdcionarElemento(List lista, int numeroThread) {
+	public TarefaAdcionarElemento(Lista lista, int numeroThread) {
 		super();
 		this.numeroThread = numeroThread;
 		this.lista= lista;
@@ -21,7 +21,7 @@ public class TarefaAdcionarElemento implements Runnable {
 	@Override
 	public void run() {
 		for (int i=0;i<10;i++) {
-			lista.add("Elemento "+i+" Num. Thread "+this.numeroThread);
+			lista.adicionaElemento("Elemento "+i+" Num. Thread "+this.numeroThread);
 		}
 		// TODO Auto-generated method stub
 
